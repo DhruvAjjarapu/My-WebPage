@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fun Activites</title>
+    <script>
+        var r1 = Math.floor(Math.random()*255);
+        var g1 = Math.floor(Math.random()*255);
+        var b1 = Math.floor(Math.random()*255);
+        var color1 = "rgb("+r1+", "+g1+", "+b1+")";
+
+        var r2 = Math.floor(Math.random()*255);
+        var g2 = Math.floor(Math.random()*255);
+        var b2 = Math.floor(Math.random()*255);
+        var color2 = "rgb("+r2+", "+g2+", "+b2+")";
+
+        var r3 = Math.floor(Math.random()*255);
+        var g3 = Math.floor(Math.random()*255);
+        var b3 = Math.floor(Math.random()*255);
+        var color3 = "rgb("+r3+", "+g3+", "+b3+")";
+
+        var r4 = Math.floor(Math.random()*255);
+        var g4 = Math.floor(Math.random()*255);
+        var b4 = Math.floor(Math.random()*255);
+        var color4 = "rgb("+r4+", "+g4+", "+b4+")";
+
+    </script>
+    <link rel="stylesheet" href="Stylesheet.css">
+</head>
+<body>
+    <h1>Minigames</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Travel Blog.html">Travels</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="NFL Table.html">NFL Table</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="activities.html">Minigames</a>
+        </nav>
+    <div class="minigames">
+        <h2>Color Guessing Game</h2>
+        <button id = "1" class = "buttons" onclick = "check(this)"></button>
+        <button id = "2" class = "buttons" onclick = "check(this)"></button>
+        <button id = "3" class = "buttons" onclick = "check(this)"></button>
+        <button id = "4" class = "buttons" onclick = "check(this)"></button>
+        <button id = "reset" class = "buttons" onclick = "refresh()">restart</button>
+        <p id = "result"></p>
+    </div>
+    <hr>
+    <div class= "minigames">
+        <h2>Calculator</h2>
+        <form action="" class = "calculator" name = "form1">
+            <input type="number" id = "num1" placeholder="num1">
+            <input type="number" id = "num2" placeholder = "num2">
+            <br>
+            <br>
+            <input type="number" id = "result" disabled>
+            <br>
+            <br>
+            <input type="button" class = "buttons" value = "+" onclick = "form1.result.value=parseFloat(form1.num1.value) + parseFloat(form1.num2.value)" >
+            <input type="button" class = "buttons" value = "-" onclick = "form1.result.value=parseFloat(form1.num1.value) - parseFloat(form1.num2.value)" >
+            <input type="button" class = "buttons" value = "*" onclick = "form1.result.value=parseFloat(form1.num1.value) * parseFloat(form1.num2.value)" >
+            <input type="button" class = "buttons" value = "/" onclick = "form1.result.value=parseFloat(form1.num1.value) / parseFloat(form1.num2.value)" >
+            <br>
+            <br>
+            <input type="button" class = "buttons" value = "clear" onclick = "form1.result.value=''; form1.num1.value=''; form1.num2.value='';   " >
+
+            
+        </form>
+    </div>
+    <hr>
+    <div class = "minigames">
+        <h3>Leap Year Checker</h3>
+        <label for="year1">Enter year one.</label>
+        <input type="number" id = "year1" >
+        <br>
+        <br>
+        <label for="year2">Enter year two.</label>
+        <input type="number" id = "year2">
+        <br>
+        <br>
+        <button onclick = "checkLeap()">Submit</button>
+        <p id="allLeapYears"></p>
+    
+        
+    </div>
+
+    <div class = "minigames" id = "slideshow">
+        
+    </div>
+
+
+    <script>
+        document.getElementById("1").style.backgroundColor=color1;
+        document.getElementById("2").style.backgroundColor=color2;
+        document.getElementById("3").style.backgroundColor=color3;
+        document.getElementById("4").style.backgroundColor=color4;
+        var chosenElement = Math.floor(Math.random()*4)+1;
+        console.log(chosenElement)
+        function check(e){
+            console.log(e);
+            document.getElementById("result").innerHTML=""
+            var guessedButton = e.id;
+            console.log(guessedButton)
+            if(chosenElement == guessedButton){
+                document.getElementById("result").innerHTML="Congrats! You guessed the correct color!"
+
+            }
+            else{
+                document.getElementById("result").innerHTML="Oops! Guess again!"
+            }
+
+        }
+        function refresh(e){
+            location.reload();  
+        }
+        var leapYears = []
+        function checkLeap(){
+            var y1 = document.getElementById("year1").value; 
+            var y2 = document.getElementById("year2").value;
+            for(var i = y1; i <= y2; i++){
+                isLeap(i);                
+            }
+            document.getElementById("allLeapYears").innerHTML=leapYears;
+        }
+        function isLeap(year){
+            if((year%4==0 && year%100!=0)||(year%4==0 && year%100==0 && year%400==0)){
+                leapYears.push(year)
+            } 
+        }
+        
+    </script>
+    
+</body>
+</html>

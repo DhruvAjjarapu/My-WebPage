@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Life</title>
+    <link rel="stylesheet" href="Stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="My Gal. Pic 1.jpeg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>My Gallery</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="Travel Blog.html">Travels</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="NFL Table.html">NFL Table</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="activities.html">Minigames</a>
+        </nav>
+    <div class = "MainDivision">
+        <h2>My Favorite Things</h2>
+        <div id = "slideshow">
+            <img src="Rockets.png" alt="" class = "slides">
+            <img src="Russ.jpeg" alt="" class = "slides">
+            <img src="levi _).png" alt="" class = "slides">
+            <img src="FAILUREEE.jpeg" alt="" class = "slides">
+        </div>
+    </div>
+    <div class= "MainDivision">
+        <h2>My Favorite Logos, Items, and Images</h2>
+        <div class= "SubDivision"><a href="https://www.seahawks.com/"><img src="My Gal. Pic 1.jpeg" alt=""></a><p>Seattle Seahawks</p></div>
+        <div class= "SubDivision"><a href="https://www.papajohns.com/?utm_source=google&utm_medium=cpc&utm_campaign=branded&gclid=Cj0KCQjwtMCKBhDAARIsAG-2Eu9GKXWWnPLLf26vX1pgUBoEaQKc09-GAMNxuCZ0JiA9l_GHqRjUWcsaAoaIEALw_wcB&gclsrc=aw.ds"><img src="My Gal. Pic 2.jpeg" alt=""></a><p>Papa Johns Pizza</p></div>
+        <div class= "SubDivision"><a href="https://www.worldwildlife.org/species/shark"><img src="My Gal. Pic 3.jpeg" alt=""></a><p>Shark</p></div>
+        <div class= "SubDivision"><a href="https://www.playstation.com/en-us/ps5/"><img src="My Gal. Pic 4.png" alt=""></a><p>PlayStation 5</p></div>
+    </div>
+
+    <div class= "MainDivision">
+        <h2>My Favorite Songs</h2>
+        <div class= "SubDivision"><audio controls src="imagine_dragons_thunder_o8KNAXMByoK-gucZtTR_.mp3"></audio><p> Thunder - Imangine Dragons</p> </div>
+        <div class= "SubDivision"><audio controls src="Marshmello - Alone (Official Music Video).mp3"></audio><p>Alone - Marshmello</p> </div>
+        <div class= "SubDivision"><audio controls src="Imagine Dragons - Believer.mp3"></audio><p>Believer - Imagine Dragons</p> </div>
+        <div class= "SubDivision"><audio controls src="Alan Walker - The Spectre.mp3"></audio><p>The Spectre - Alan Walker</p> </div>
+    </div>
+    <div class= "MainDivision">
+        <h2>My Favorite YouTube Videos</h2>
+        <div class= "SubDivision"><video controls src="yt5s.com-basically bedwars-(1080p).mp4"></video><p>Basically Bedwars Skit</p> </div>
+        <div class= "SubDivision"><video controls src="yt5s.com-hello I am under the water-(1080p).mp4"></video><p>Under the Water-</p> </div>
+        <div class= "SubDivision"><video controls src="yt5s.com-what color is a carrot-(1080p).mp4"></video><p>What Color is a Carrot?</p> </div>
+        <div class= "SubDivision"><video controls src="yt5s.com-MVP _ Animation Short Film inspired by Kobe Bryant.mp4"></video><p>MVP</p> </div>
+    </div>
+    <div class= "MainDivision">
+        <h2>My Favorite YouTube Links</h2>
+        <div class= "SubDivision"><iframe width="560" height="315" src="https://www.youtube.com/embed/XW1LV8Ep1WM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p></p> </div>
+        <div class= "SubDivision"><iframe width="560" height="315" src="https://www.youtube.com/embed/sAU63rbHKvA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p></p> </div>
+        <div class= "SubDivision"><iframe width="560" height="315" src="https://www.youtube.com/embed/IgAnj6r1O48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p></p> </div>
+        <div class= "SubDivision"><iframe width="560" height="315" src="https://www.youtube.com/embed/su3ejcIeVdo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><p></p> </div>
+    </div>
+    <div class = "MainDivision">
+        <canvas id = "mycanvas">
+
+        </canvas>
+    </div>
+    <script>
+        var imgIndex = 0;
+        function startslideshow(){
+            var images = document.getElementsByClassName("slides");
+            for(i=0;i<images.length;i++){
+                images[i].style.display="none";
+            }
+            images[imgIndex].style.display="block";
+            imgIndex++;
+            if(imgIndex>=images.length){
+                imgIndex = 0
+            }
+            setTimeout(startslideshow,1000)
+        }
+        startslideshow(); 
+        var canvas = document.getElementById("mycanvas") 
+            var c = canvas.getContext("2d");
+            canvas.width = window.innerWidth/2;
+            canvas.height = window.innerHeight/2;
+            canvas.style.marginLeft="20vw"
+            var deltaX = 0;
+            var deltaY = 0;
+            var changeX = 0;
+        function drawoncanvas(){
+            c.clearRect(0,0,canvas.width,canvas.height)
+            c.font="20px Arial"
+            c.fillStyle = "black"
+            c.strokeText("THANKS FOR COMING TO MY WEBPAGE :)))",deltaX,50)
+            c.fillText("THANKS FOR COMING TO MY WEBPAGE :)))",50,deltaY)
+            deltaX = deltaX + 10
+            deltaY = deltaY + 10
+            if(deltaX>canvas.width){deltaX = 0}
+            if(deltaY>canvas.height){deltaY = 0}
+            c.beginPath()
+            c.arc(100 + changeX,100,50,0,2*Math.PI,false)  
+            c.stroke() 
+            c.fillStyle="yellow" 
+            c.fill()
+            c.beginPath()
+            c.arc(100+changeX,100,25,0,Math.PI,false)  
+            c.stroke()  
+            c.beginPath()
+            c.arc(80+changeX,80,10,0,2*Math.PI,false)  
+            c.stroke() 
+            c.fillStyle="black"
+            c.fill()
+            c.beginPath()
+            c.arc(120+changeX,80,10,0,2*Math.PI,false)  
+            c.stroke() 
+            c.fillStyle="black"
+            c.fill()
+            changeX = changeX + 5
+            if(changeX>canvas.width){changeX = 0}
+             
+        }
+
+        setInterval(drawoncanvas,100);
+
+    </script>
+</body>
+</html>

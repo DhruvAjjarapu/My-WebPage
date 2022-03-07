@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Stylesheet.css">
+    <title>About Me WebPage</title>
+    <link rel="icon" href="My Gal. Pic 1.jpeg">
+    <style>h2{
+        text-align:left;
+    }</style>
+</head>
+<body onmousewheel="changeHeading()" ondblclick="changeRgb(this)">
+<h1>About Me</h1>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="Travel Blog.html">Travels</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="activities.html">Minigames</a>
+</nav>
+<p id='myPara' style="color: blue"></p>
+<p id = "date"></p>
+<p id = "Greeting"></p>
+<p>Welcome to my About Me Page. I live in Washington with my loving mom, dad, and brother.</p>
+
+<h2>Favorite Hobbies:</h2>
+
+<ul>    
+<li>Playing Sports (Basketball, Football, ETC.)</li>
+<br>
+<li>Gaming (Xbox)</li>
+<br>
+<li>Making a Youtube Channel w/ Friends  </li>
+<br>
+<li>Watching TV</li>
+<br>
+<li>Nature Walks and Hikes</li>
+</ul>
+
+<h2>
+Top 5 Foods:   
+</h2>
+
+<ol>
+<li>Pizza (Alfredo Sauce, Pineapples, Olives, Green Peppers)</li>  
+<br> 
+<li>Mac and Cheese</li>
+<br> 
+<li>Garlic Bread</li> 
+<br> 
+<li>Cake</li>
+<br> 
+<li>Ice Cream</li>
+<br> 
+</ol>
+
+<h2>Top 5 Favorite NBA teams and Placing:</h2>
+
+<dl>
+<dt>Houston Rockets</dt>
+<dd>Placed 15th in the Western Conference</dd>
+<br>
+<dt>Brooklyn Nets</dt>
+<dd>Placed 2nd in the Eastern Conference</dd>
+<br>
+<dt>Los Angeles Lakers</dt>
+<dd>Placed 7th in the  Western Conference</dd>
+<br>
+<dt>Golden State Warriors</dt>
+<dd>Placed 9th in the Western Conference</dd>
+<br>
+<dt>Portland Trailblazers</dt>
+<dd>Placed 6th in the Western Conference</dd>
+</dl>
+<img src="NBA Logo.jpeg" alt="" onmouseover="change(this)" onmouseout="changeback(this)" >
+<h2>My Favorite Video Games</h2> 
+<ol>
+<li>Minecraft</li>
+<br> 
+<li>Shadow Fight 2</li>
+<br> 
+<li>Madden</li>
+<br> 
+<li>2k</li>
+<br> 
+<li>Apex Legends</li>
+<br> 
+</ol>
+<p>I hope you have a fun time browsing through my webpage. Have fun!</p>
+<script>
+    function getDate(){
+        var today = new Date();
+        document.getElementById("date").innerHTML= today.toLocaleString();
+        if(today.getHours()>=1 && today.getHours()<=4){
+document.getElementById("Greeting").innerHTML = "Night"
+}
+if(today.getHours()>=4 && today.getHours()<=11){
+document.getElementById("Greeting").innerHTML = "Good Morning"
+}
+if(today.getHours()>=11 && today.getHours()<=16){
+document.getElementById("Greeting").innerHTML = "Good Afternoon"
+}
+if(today.getHours()>=17 && today.getHours()<=20){
+document.getElementById("Greeting").innerHTML = "Good Evening"
+}
+if(today.getHours()>=20 && today.getHours()<=24){
+document.getElementById("Greeting").innerHTML = "Good Night"
+}
+
+    }
+    setInterval(getDate,1000);
+    var name=prompt('Welcome to my Webpage!');
+    console.log(name);
+    document.getElementById('myPara').innerHTML='hello '+name;
+    confirm("Confirmation");
+    var orgWidth = "";
+    function change(e){
+        orgWidth = e.style.width;
+        e.style.width="500px";
+        console.log(e);
+    }
+    function changeback(e){
+        e.style.width=orgWidth; 
+    }
+    function changeHeading(){
+       var headings = document.getElementsByTagName("h2");
+       console.log(headings);
+       
+    headings[0].style.color='#026e5f';
+    headings[1].style.color='#026e5f';
+    headings[2].style.color='#026e5f';
+    headings[3].style.color='#026e5f';
+}
+    function changeRgb(e){
+        console.log("hi")
+        e.style.backgroundColor="#8c00f7";
+    }
+
+</script>
+</body>
+</html>
+
+
